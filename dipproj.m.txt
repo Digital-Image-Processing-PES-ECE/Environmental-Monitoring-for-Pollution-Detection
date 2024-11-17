@@ -1,0 +1,56 @@
+% Reading the image
+img = imread("oilspill.jpg"); 
+
+subplot(2,2,1);
+imshow(img);
+title("original image");
+
+% Resizing the image
+resized_img = imresize(img, [512, 512]);
+
+% Converting to grayscale for better analysis
+gray_img = rgb2gray(resized_img);
+
+% Applying Thresholding to detect polluted regions
+threshold_value = 120;  
+bin_image = gray_img > threshold_value;
+
+% Displaying the binary (thresholded) image
+subplot(2,2,2);
+imshow (bin_image);
+title ('Thresholded Pollution Regions');
+
+% Removing small noise using morphological operations (area < 500 pixels)
+clean_img = bwareaopen(bin_image, 500);   
+
+% Displaying the clean image
+subplot(2,2,3);
+imshow(clean_img);
+title('Cleaned Pollution Regions');
+
+% Calculate the area of the detected pollution regions (extent)
+polluted_area = sum(clean_img(:));  % Total number of pixels in the polluted regions
+total_area = numel(clean_img);  % Total number of pixels in the image
+pollution_percentage = (polluted_area / total_area) * 100;  % Percentage of image covered by pollution
+
+fprintf('Pollution Area: %d pixels\n', polluted_area);
+fprintf('Pollution Coverage: %.2f%% of the image\n', pollution_percentage);
+
+% Calculating and obtaining the average intensity of the polluted regions - describes severity
+polluted_intensity_values = gray_img(clean_img);
+avg_intensity = mean(polluted_intensity_values);
+
+fprintf('Average Intensity of Pollution: %.2f\n', avg_intensity);
+
+% Estimating Pollution Level (Pollution Index) based on area and average intensity
+pollution_index = pollution_percentage * avg_intensity;  
+
+fprintf('Estimated Pollution Level (Pollution Index): %.2f\n', pollution_index);
+
+% Visualizing the pollution region overlayed on the original image
+subplot(2,2,4);
+imshow(resized_img);
+hold on;
+[rows, cols] = find(clean_img);
+plot(cols, rows, 'r.', 'MarkerSize', 1);  % Overlay pollution regions
+title('Pollution Regions Highlighted on the Original Image');
