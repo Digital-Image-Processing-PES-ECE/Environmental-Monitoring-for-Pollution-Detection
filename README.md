@@ -4,24 +4,24 @@
 #### Summary - This project utilizes aerial imagery to detect and quantify pollution levels, such as oil spills and algal blooms, through color and texture analysis. By segmenting and analyzing distinct visual features of polluted regions, this approach provides an efficient and scalable solution for environmental monitoring and rapid pollution assessment.
 
 #### Course concepts used - 
-1. - 	Thresholding: A segmentation technique that uses intensity values to distinguish between pollution and non-pollution areas.
-2. -	Morphological Operations: Used to clean up small, irrelevant regions in the binary image by removing noise.
-3. -	Statistical Analysis: Calculation of pollution area percentage, average intensity, and Pollution Index for quantitative assessment.
+1. Thresholding: A segmentation technique that uses intensity values to distinguish between pollution and non-pollution areas.
+2. Morphological Operations: Used to clean up small, irrelevant regions in the binary image by removing noise.
+3. Statistical Analysis: Calculation of pollution area percentage, average intensity, and Pollution Index for quantitative assessment.
 
    
 #### Additional concepts used -
-1. - Overlay Visualization: Mapping detected regions onto the original image for visualization. It helps to validate the detection and measurement process.
+1. Overlay Visualization: Mapping detected regions onto the original image for visualization. It helps to validate the detection and measurement process.
 
    
 #### Dataset - 
 Google earth engine, NASA’s earth observatory, Sentinal-2 satellite data
 
 #### Novelty - 
-1. - Detection Technique: Combines color and texture analysis.
-2. - Pollution Severity Assessment:	Custom Pollution Index for severity
-3. - Noise Handling: Automatic noise smoothing & morphological operations
-4. - Cost & Scalability: Low-cost, scalable using aerial imagery
-5. - Quantitative Metrics: Area & intensity-based quantification
+1. Detection Technique: Combines color and texture analysis.
+2. Pollution Severity Assessment:	Custom Pollution Index for severity
+3. Noise Handling: Automatic noise smoothing & morphological operations
+4. Cost & Scalability: Low-cost, scalable using aerial imagery
+5. Quantitative Metrics: Area & intensity-based quantification
 
    
 ### Contributors:
@@ -45,11 +45,11 @@ Google earth engine, NASA’s earth observatory, Sentinal-2 satellite data
 * Final output images
   
 ### References:
-1. - Data Set: Google earth engine
+1. Data Set: Google earth engine
                 NASA’s earth observatory
                 Sentinal-2 satellite data
 
-2. - Code reference: Course Contents
+2. Code reference: Course Contents
 
    
 ### Limitations and Future Work:
