@@ -1,4 +1,4 @@
-# ENVIRONMENTAL MONITORING FPR POLLUTION DETECTION
+# ENVIRONMENTAL MONITORING FOR POLLUTION DETECTION
 
 ### Project Description:
 #### Summary - This project utilizes aerial imagery to detect and quantify pollution levels, such as oil spills and algal blooms, through color and texture analysis. By segmenting and analyzing distinct visual features of polluted regions, this approach provides an efficient and scalable solution for environmental monitoring and rapid pollution assessment.
